@@ -8,5 +8,7 @@ http://jackdougherty.github.io/leaflet-storymap-layers/index.html
 
 Scrolling the storymap adds/removes GeoJSON layers, to tell a story about changing boundaries over time
 
+See layers folder: layer1.geojson, layer2.geojson, layer3.geojson
+
 See coding suggestions
 - http://gis.stackexchange.com/questions/118510/load-or-display-differents-geojson-data-on-zoom-level-for-leaflet-maps
