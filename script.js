@@ -28,7 +28,7 @@ function initMap() {
   .setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
 
   // This loads the GeoJSON map data file from a local folder
-  $.getJSON('map.geojson', function(data) { /*
+  $.getJSON('map.geojson', function(data) {
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         (function(layer, properties) {
@@ -70,7 +70,7 @@ function initMap() {
           $('#contents').append(container);
 
           var i;
-          var areaTop = -1 * $(window.top).height() / 3;
+          var areaTop = -100;
           var areaBottom = 0;
 
           // Calculating total height of blocks above active
@@ -107,7 +107,7 @@ function initMap() {
 
         })(layer, feature.properties);
       }
-  }); */
+  });
 
     $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-arrow-up'></i></a></div>");
 
