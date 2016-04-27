@@ -1,4 +1,5 @@
 id,chapter,zoom,layer,image,source-credit,source-link,description,lon,lat
-1,Newington 1871,15,layer/layer1.geojson,img/1847-HPHS-Catalog1904p164.jpg,Source: HPHS Quadrennial Catalogue 1904,https://www.flickr.com/photos/56513965@N06/21047067205,Newington incorporated from Wethersfield in 1871,-72.73,41.68
-2,Plainville 1869,15,layer/layer2.geojson,img/1905-HPHS-postcard.jpg,Source: Flickr,https://flic.kr/p/FNxWf8,Plainville incorporated from Farmington in 1869,-72.863,41.675
-3,More to come,13,layer/layer3.geojson,https://farm6.staticflickr.com/5693/20860554099_1a9466a11e_c.jpg,Source: Carlos Velazquez/Flickr,https://flic.kr/p/xMnMXR,"Countywide view, more chapters to come",-72.701,41.7654
+1,HartfordCounty today,10,layer/layer1.geojson,img/1847-HPHS-Catalog1904p164.jpg,Source: HPHS Quadrennial Catalogue 1904,https://www.flickr.com/photos/56513965@N06/21047067205,Hartford County as it exists today,-72.73,41.68
+2,Newington 1871,12,layer/layer1.geojson,img/1847-HPHS-Catalog1904p164.jpg,Source: HPHS Quadrennial Catalogue 1904,https://www.flickr.com/photos/56513965@N06/21047067205,Newington incorporated from Wethersfield in 1871,-72.73,41.68
+3,Plainville 1869,12,layer/layer2.geojson,img/1905-HPHS-postcard.jpg,Source: Flickr,https://flic.kr/p/FNxWf8,Plainville incorporated from Farmington in 1869,-72.863,41.675
+4,More to come,11,layer/layer3.geojson,https://farm6.staticflickr.com/5693/20860554099_1a9466a11e_c.jpg,Source: Carlos Velazquez/Flickr,https://flic.kr/p/xMnMXR,"Countywide view, more chapters to come",-72.701,41.7654
