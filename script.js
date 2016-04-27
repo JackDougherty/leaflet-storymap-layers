@@ -94,13 +94,13 @@ function initMap() {
                             map.removeLayer(layer);
                         }
                     });
-
+/*
                     // This adds another data layer
                     $.getJSON(feature.properties['layer'], function(data) {
                         var coord = feature.geometry['coordinates'];
                         var zoom = feature.properties['zoom'];
                         refreshLayer(data, map, coord, zoom);
-                    });
+                    }); */
                 }
             }
           });
