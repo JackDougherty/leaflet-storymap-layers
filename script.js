@@ -26,7 +26,7 @@ function initMap() {
   // This customizes link to view source code; add your own GitHub repository
   map.attributionControl
   .setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
-
+/*
   // This loads the GeoJSON map data file from a local folder
   $.getJSON('map.geojson', function(data) {
     var geojson = L.geoJson(data, {
@@ -100,7 +100,7 @@ function initMap() {
                         var coord = feature.geometry['coordinates'];
                         var zoom = feature.properties['zoom'];
                         refreshLayer(data, map, coord, zoom);
-                    }); */
+                    }); 
                 }
             }
           });
@@ -111,7 +111,7 @@ function initMap() {
 
     $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-arrow-up'></i></a></div>");
 
-  });
+}); */
 }
 
 
