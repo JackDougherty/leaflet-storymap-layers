@@ -47,6 +47,10 @@ body {
     padding-top: 70px;
 }
 
+.space-at-the-bottom a:visited {
+    color: silver;
+}
+
 #chapter {
     position: absolute;
     z-index: 999;
