@@ -9,14 +9,18 @@ $('div#contents').scroll(function() {
 
 // This adds data as a new layer to the map
 function refreshLayer(data, map, coord, zoom) {
-    var dataLayer = L.geoJson(data);
-    dataLayer.addTo(map);
-    map.setView([coord[1], coord[0]], zoom);
+  var dataLayer = L.geoJson(data);
+  dataLayer.addTo(map);
+  map.setView([coord[1], coord[0]], zoom);
 }
 
 function initMap() {
-  // This creates the Leaflet map with a generic start point, because code at bottom automatically fits bounds to all markers
-  var map = L.map('map').setView([0, 0], 5);
+  // This creates the Leaflet map with a generic start point, because GeoJSON layer includes all coordinates
+  var map = L.map('map', {
+    center: [0, 0],
+    zoom: 5,
+    scrollWheelZoom: false
+  });
 
   // This displays a base layer map (other options available)
   var lightAll = new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -25,7 +29,7 @@ function initMap() {
 
   // This customizes link to view source code; add your own GitHub repository
   map.attributionControl
-  .setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+  .setPrefix('View <a href="http://github.com/jackdougherty/leaflet-storymap-layers" target="_blank">code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
 
   // This loads the GeoJSON map data file from a local folder
   $.getJSON('map.geojson', function(data) {
@@ -61,7 +65,7 @@ function initMap() {
           });
 
           var imgHolder = $('<div></div', {
-              class: 'img-holder'
+            class: 'img-holder'
           });
 
           imgHolder.append(image);
@@ -75,43 +79,43 @@ function initMap() {
 
           // Calculating total height of blocks above active
           for (i = 1; i < feature.properties['id']; i++) {
-              areaTop += $('div#container' + i).height() + imageContainerMargin;
+            areaTop += $('div#container' + i).height() + imageContainerMargin;
           }
 
           areaBottom = areaTop + $('div#container' + feature.properties['id']).height();
 
           $('div#contents').scroll(function() {
             if ($(this).scrollTop() >= areaTop && $(this).scrollTop() < areaBottom) {
-                if (feature.properties['id'] != currentBox) {
-                    currentBox = feature.properties['id'];
+              if (feature.properties['id'] != currentBox) {
+                currentBox = feature.properties['id'];
 
-                    $('.image-container').removeClass("inFocus").addClass("outFocus");
-                    $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
+                $('.image-container').removeClass("inFocus").addClass("outFocus");
+                $('div#container' + feature.properties['id']).addClass("inFocus").removeClass("outFocus");
 
-                    // This removes all layers besides the base layer
-                    map.eachLayer(function (layer) {
-                        if (layer != lightAll) {
-                            map.removeLayer(layer);
-                        }
-                    });
+                // This removes all layers besides the base layer
+                map.eachLayer(function (layer) {
+                  if (layer != lightAll) {
+                    map.removeLayer(layer);
+                  }
+                });
 
-                    // This adds another data layer
-                    $.getJSON(feature.properties['layer'], function(data) {
-                        var coord = feature.geometry['coordinates'];
-                        var zoom = feature.properties['zoom'];
-                        refreshLayer(data, map, coord, zoom);
-                    });
-                }
+                // This adds another data layer
+                $.getJSON(feature.properties['layer'], function(data) {
+                  var coord = feature.geometry['coordinates'];
+                  var zoom = feature.properties['zoom'];
+                  refreshLayer(data, map, coord, zoom);
+                });
+              }
             }
           });
 
         })(layer, feature.properties);
       }
-  });
-
-    $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-arrow-up'></i></a></div>");
-
     });
+
+    $('#contents').append("<div class='space-at-the-bottom'><a href='#space-at-the-top'><i class='fa fa-chevron-up'></i></br><small>Go to Top</small></a></div>");
+
+  });
 }
 
 
