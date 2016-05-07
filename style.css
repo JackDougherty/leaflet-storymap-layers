@@ -42,13 +42,7 @@ body {
     height: 130px;
     margin: 0px;
     text-align: center;
-    font-size: 300%;
-    color: silver;
     padding-top: 70px;
-}
-
-.space-at-the-bottom a:visited {
-    color: silver;
 }
 
 #chapter {
