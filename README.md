@@ -18,6 +18,7 @@ http://jackdougherty.github.io/leaflet-storymap-layers/index.html
 
 ## Compare with
 - http://github.com/jackdougherty/leaflet-storymap
+- http://github.com/jackdougherty/otl-historical-town-borders (also adds/removes tile layers via scroll)
 
 ## Credits
 - Thanks @ilyankou for coding the add/remove layers with the scrolling interface  
